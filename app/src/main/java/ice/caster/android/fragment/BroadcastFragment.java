@@ -3,7 +3,7 @@ package ice.caster.android.fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +11,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
 import ice.caster.android.R;
 import ice.caster.android.shout.Config;
 import ice.caster.android.shout.Encoder;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class BroadcastFragment extends Fragment {
 
@@ -41,11 +41,11 @@ public class BroadcastFragment extends Fragment {
     static final String ICE_USER    = "user";
     static final String ICE_PASS    = "pass";
 
-    @InjectView(R.id.start)
+    @BindView(R.id.start)
     Button start;
-    @InjectView(R.id.stop)
+    @BindView(R.id.stop)
     Button stop;
-    @InjectView(R.id.status)
+    @BindView(R.id.status)
     TextView status;
 
     private Encoder encoder;
@@ -68,7 +68,7 @@ public class BroadcastFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         /**
          * This is short-hand setter and handler should be static class
